@@ -1,0 +1,337 @@
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.19.0-1025-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Sep  8 07:45:52 UTC 2023
+
+  System load:  0.0               Processes:             94
+  Usage of /:   20.6% of 7.57GB   Users logged in:       0
+  Memory usage: 24%               IPv4 address for eth0: 172.31.32.189
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-32-189:~$ apt-get install apt-transport-https curl ca-certificates curl software-properties-common -y
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+ubuntu@ip-172-31-32-189:~$ cd ..
+ubuntu@ip-172-31-32-189:/home$ sudo su -
+root@ip-172-31-32-189:~# sudo apt-get install apt-transport-https curl ca-certificates curl software-properties-common -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Note, selecting 'apt' instead of 'apt-transport-https'
+apt is already the newest version (2.4.9).
+apt set to manually installed.
+ca-certificates is already the newest version (20211016ubuntu0.22.04.1).
+ca-certificates set to manually installed.
+curl is already the newest version (7.81.0-1ubuntu1.10).
+curl set to manually installed.
+software-properties-common is already the newest version (0.99.22.6).
+software-properties-common set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@ip-172-31-32-189:~# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+root@ip-172-31-32-189:~# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+Repository: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable'
+Description:
+Archive for codename: focal components: stable
+More info: https://download.docker.com/linux/ubuntu
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.
+Adding deb entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]                    
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]                  
+Get:4 https://download.docker.com/linux/ubuntu focal InRelease [57.7 kB]                                 
+Get:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]                                
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [970 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [222 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [15.6 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [838 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [135 kB]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 c-n-f Metadata [536 B]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [979 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [213 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [21.8 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [41.6 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [9768 B]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [476 B]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [41.7 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [10.5 kB]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [24.3 kB]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.4 kB]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [640 B]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:32 https://download.docker.com/linux/ubuntu focal/stable amd64 Packages [33.2 kB]
+Get:33 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [761 kB]
+Get:34 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [164 kB]
+Get:35 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [11.3 kB]
+Get:36 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [822 kB]
+Get:37 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [132 kB]
+Get:38 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 c-n-f Metadata [536 B]
+Get:39 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [781 kB]
+Get:40 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [143 kB]
+Get:41 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [16.7 kB]
+Get:42 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [36.5 kB]
+Get:43 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [7060 B]
+Get:44 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [260 B]
+Fetched 27.2 MB in 5s (5517 kB/s)               
+Reading package lists... Done
+W: https://download.docker.com/linux/ubuntu/dists/focal/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+root@ip-172-31-32-189:~# apt-get install docker-ce -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  containerd.io docker-buildx-plugin docker-ce-cli docker-ce-rootless-extras docker-compose-plugin libltdl7 libslirp0 pigz slirp4netns
+Suggested packages:
+  aufs-tools cgroupfs-mount | cgroup-lite
+The following NEW packages will be installed:
+  containerd.io docker-buildx-plugin docker-ce docker-ce-cli docker-ce-rootless-extras docker-compose-plugin libltdl7 libslirp0 pigz slirp4netns
+0 upgraded, 10 newly installed, 0 to remove and 113 not upgraded.
+Need to get 114 MB of archives.
+After this operation, 409 MB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 pigz amd64 2.6-1 [63.6 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 libltdl7 amd64 2.4.6-15build2 [39.6 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 libslirp0 amd64 4.6.1-1build1 [61.5 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 slirp4netns amd64 1.0.1-2 [28.2 kB]
+Get:5 https://download.docker.com/linux/ubuntu focal/stable amd64 containerd.io amd64 1.6.22-1 [28.3 MB]
+Get:6 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-buildx-plugin amd64 0.11.2-1~ubuntu.20.04~focal [28.2 MB]
+Get:7 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce-cli amd64 5:24.0.6-1~ubuntu.20.04~focal [13.3 MB]
+Get:8 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce amd64 5:24.0.6-1~ubuntu.20.04~focal [22.6 MB]
+Get:9 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce-rootless-extras amd64 5:24.0.6-1~ubuntu.20.04~focal [9038 kB]
+Get:10 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-compose-plugin amd64 2.21.0-1~ubuntu.20.04~focal [11.9 MB]
+Fetched 114 MB in 2s (60.8 MB/s)             
+Selecting previously unselected package pigz.
+(Reading database ... 64295 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.6-1_amd64.deb ...
+Unpacking pigz (2.6-1) ...
+Selecting previously unselected package containerd.io.
+Preparing to unpack .../1-containerd.io_1.6.22-1_amd64.deb ...
+Unpacking containerd.io (1.6.22-1) ...
+Selecting previously unselected package docker-buildx-plugin.
+Preparing to unpack .../2-docker-buildx-plugin_0.11.2-1~ubuntu.20.04~focal_amd64.deb ...
+Unpacking docker-buildx-plugin (0.11.2-1~ubuntu.20.04~focal) ...
+Selecting previously unselected package docker-ce-cli.
+Preparing to unpack .../3-docker-ce-cli_5%3a24.0.6-1~ubuntu.20.04~focal_amd64.deb ...
+Unpacking docker-ce-cli (5:24.0.6-1~ubuntu.20.04~focal) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../4-docker-ce_5%3a24.0.6-1~ubuntu.20.04~focal_amd64.deb ...
+Unpacking docker-ce (5:24.0.6-1~ubuntu.20.04~focal) ...
+Selecting previously unselected package docker-ce-rootless-extras.
+Preparing to unpack .../5-docker-ce-rootless-extras_5%3a24.0.6-1~ubuntu.20.04~focal_amd64.deb ...
+Unpacking docker-ce-rootless-extras (5:24.0.6-1~ubuntu.20.04~focal) ...
+Selecting previously unselected package docker-compose-plugin.
+Preparing to unpack .../6-docker-compose-plugin_2.21.0-1~ubuntu.20.04~focal_amd64.deb ...
+Unpacking docker-compose-plugin (2.21.0-1~ubuntu.20.04~focal) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../7-libltdl7_2.4.6-15build2_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-15build2) ...
+Selecting previously unselected package libslirp0:amd64.
+Preparing to unpack .../8-libslirp0_4.6.1-1build1_amd64.deb ...
+Unpacking libslirp0:amd64 (4.6.1-1build1) ...
+Selecting previously unselected package slirp4netns.
+Preparing to unpack .../9-slirp4netns_1.0.1-2_amd64.deb ...
+Unpacking slirp4netns (1.0.1-2) ...
+Setting up docker-buildx-plugin (0.11.2-1~ubuntu.20.04~focal) ...
+Setting up containerd.io (1.6.22-1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Setting up docker-compose-plugin (2.21.0-1~ubuntu.20.04~focal) ...
+Setting up libltdl7:amd64 (2.4.6-15build2) ...
+Setting up docker-ce-cli (5:24.0.6-1~ubuntu.20.04~focal) ...
+Setting up libslirp0:amd64 (4.6.1-1build1) ...
+Setting up pigz (2.6-1) ...
+Setting up docker-ce-rootless-extras (5:24.0.6-1~ubuntu.20.04~focal) ...
+Setting up slirp4netns (1.0.1-2) ...
+Setting up docker-ce (5:24.0.6-1~ubuntu.20.04~focal) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+Scanning processes...                                                                                                                                                       
+Scanning linux images...                                                                                                                                                    
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@ip-172-31-32-189:~# docker --version
+Docker version 24.0.6, build ed223bc
+root@ip-172-31-32-189:~# curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 12.1M  100 12.1M    0     0  32.8M      0 --:--:-- --:--:-- --:--:--  125M
+root@ip-172-31-32-189:~# chmod +x /usr/local/bin/docker-compose
+root@ip-172-31-32-189:~# docker-compose --version
+docker-compose version 1.29.2, build 5becea4c
+root@ip-172-31-32-189:~# mkdir wordpress
+root@ip-172-31-32-189:~# nano wordpress/docker-compose.yml
+root@ip-172-31-32-189:~# cd wordpress
+root@ip-172-31-32-189:~/wordpress# docker-compose up -d
+Creating network "wordpress_default" with the default driver
+Creating volume "wordpress_mysql" with default driver
+Pulling database (mysql:)...
+latest: Pulling from library/mysql
+b193354265ba: Pull complete
+14a15c0bb358: Pull complete
+02da291ad1e4: Pull complete
+9a89a1d664ee: Pull complete
+a24ae6513051: Pull complete
+b85424247193: Pull complete
+9a240a3b3d51: Pull complete
+8bf57120f71f: Pull complete
+c64090e82a0b: Pull complete
+af7c7515d542: Pull complete
+Digest: sha256:c0455ac041844b5e65cd08571387fa5b50ab2a6179557fd938298cab13acf0dd
+Status: Downloaded newer image for mysql:latest
+Pulling wordpress (wordpress:latest)...
+latest: Pulling from library/wordpress
+7d97e254a046: Pull complete
+3c922bf9f92d: Pull complete
+f00ab166ae05: Pull complete
+77443d03e1f5: Pull complete
+64cadecd6818: Pull complete
+2136da64affb: Pull complete
+1a21fada921b: Pull complete
+a6f91347c53c: Pull complete
+bd4b2f5e9012: Pull complete
+f75badd8b349: Pull complete
+7a34f1bec0a1: Pull complete
+1ef3dc378b7d: Pull complete
+753a81a0c0cc: Pull complete
+3506b4db9bad: Pull complete
+783ace29d920: Pull complete
+bd95b61c77ad: Pull complete
+5e919996c7a9: Pull complete
+a868439263af: Pull complete
+98c65e9e3f47: Pull complete
+a3f36b71ac97: Pull complete
+9764e1c1da21: Pull complete
+Digest: sha256:8c17b9979f89c2c34e15b1ce321a23ef688398292b426c9f860e41294e1743ac
+Status: Downloaded newer image for wordpress:latest
+Creating wordpress_database_1 ... done
+Creating wordpress_wordpress_1 ... done
+root@ip-172-31-32-189:~/wordpress# Digest: sha256:8b928a5117cf5c2238c7a09cd28c2e801ac98f91c3f8203a8938ae51f14700fd
+Status: Downloaded newer image for mysql:latest
+Creating wordpress_database_1 ... done
+Creating wordpress_wordpress_1 ... done
+Digest:: command not found
+Status:: command not found
+Creating: command not found
+Creating: command not found
+root@ip-172-31-32-189:~/wordpress# docker-compose images
+      Container         Repository    Tag       Image Id       Size  
+---------------------------------------------------------------------
+wordpress_database_1    mysql        latest   99afc808f15b   577.4 MB
+wordpress_wordpress_1   wordpress    latest   f01d17bd2e36   665.7 MB
+root@ip-172-31-32-189:~/wordpress# docker-compose ps
+        Name                       Command               State                Ports              
+-------------------------------------------------------------------------------------------------
+wordpress_database_1    docker-entrypoint.sh mysqld      Up      3306/tcp, 33060/tcp             
+wordpress_wordpress_1   docker-entrypoint.sh apach ...   Up      0.0.0.0:80->80/tcp,:::80->80/tcp
+root@ip-172-31-32-189:~/wordpress# docker-compose logs wordpress
+Attaching to wordpress_wordpress_1
+wordpress_1  | WordPress not found in /var/www/html - copying now...
+wordpress_1  | WARNING: /var/www/html is not empty! (copying anyhow)
+wordpress_1  | Complete! WordPress has been successfully copied to /var/www/html
+wordpress_1  | No 'wp-config.php' found in /var/www/html, but 'WORDPRESS_...' variables supplied; copying 'wp-config-docker.php' (WORDPRESS_DB_HOST WORDPRESS_DB_NAME WORDPRESS_DB_PASSWORD WORDPRESS_DB_USER)
+wordpress_1  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+wordpress_1  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+wordpress_1  | [Fri Sep 08 07:58:13.394167 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.30 configured -- resuming normal operations
+wordpress_1  | [Fri Sep 08 07:58:13.394411 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+root@ip-172-31-32-189:~/wordpress# docker-compose logs database
+Attaching to wordpress_database_1
+database_1   | 2023-09-08 07:58:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.1.0-1.el8 started.
+database_1   | 2023-09-08 07:58:11+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+database_1   | 2023-09-08 07:58:12+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.1.0-1.el8 started.
+database_1   | 2023-09-08 07:58:12+00:00 [Note] [Entrypoint]: Initializing database files
+database_1   | 2023-09-08T07:58:12.505294Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+database_1   | 2023-09-08T07:58:12.510088Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+database_1   | 2023-09-08T07:58:12.511255Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.1.0) initializing of server in progress as process 78
+database_1   | 2023-09-08T07:58:12.540259Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+database_1   | 2023-09-08T07:58:13.973979Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+database_1   | 2023-09-08T07:58:15.879143Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+database_1   | 2023-09-08T07:58:19.781838Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+database_1   | 2023-09-08 07:58:19+00:00 [Note] [Entrypoint]: Database files initialized
+database_1   | 2023-09-08 07:58:19+00:00 [Note] [Entrypoint]: Starting temporary server
+database_1   | 2023-09-08T07:58:19.873142Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+database_1   | 2023-09-08T07:58:20.186011Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+database_1   | 2023-09-08T07:58:20.191787Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 118
+database_1   | 2023-09-08T07:58:20.218138Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+database_1   | 2023-09-08T07:58:20.583782Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+database_1   | 2023-09-08T07:58:21.024691Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+database_1   | 2023-09-08T07:58:21.024943Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+database_1   | 2023-09-08T07:58:21.029166Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+database_1   | 2023-09-08T07:58:21.064315Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+database_1   | 2023-09-08T07:58:21.064693Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+database_1   | 2023-09-08T07:58:21.070951Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+database_1   | 2023-09-08 07:58:21+00:00 [Note] [Entrypoint]: Temporary server started.
+database_1   | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+database_1   | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+database_1   | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+database_1   | Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+database_1   | Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+database_1   | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+database_1   | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+database_1   | 2023-09-08 07:58:23+00:00 [Note] [Entrypoint]: Creating database wpdb
+database_1   | 2023-09-08 07:58:24+00:00 [Note] [Entrypoint]: Creating user wpuser
+database_1   | 2023-09-08 07:58:24+00:00 [Note] [Entrypoint]: Giving user wpuser access to schema wpdb
+database_1   | 
+database_1   | 2023-09-08 07:58:24+00:00 [Note] [Entrypoint]: Stopping temporary server
+database_1   | 2023-09-08T07:58:24.101647Z 13 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.1.0).
+database_1   | 2023-09-08T07:58:25.842339Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.1.0)  MySQL Community Server - GPL.
+database_1   | 2023-09-08T07:58:25.850131Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+database_1   | 2023-09-08 07:58:26+00:00 [Note] [Entrypoint]: Temporary server stopped
+database_1   | 
+database_1   | 2023-09-08 07:58:26+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+database_1   | 
+database_1   | 2023-09-08T07:58:26.147557Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+database_1   | 2023-09-08T07:58:26.435725Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+database_1   | 2023-09-08T07:58:26.437736Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 1
+database_1   | 2023-09-08T07:58:26.446054Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+database_1   | 2023-09-08T07:58:26.783691Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+database_1   | 2023-09-08T07:58:27.078707Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+database_1   | 2023-09-08T07:58:27.079007Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+database_1   | 2023-09-08T07:58:27.082653Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+database_1   | 2023-09-08T07:58:27.143599Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+database_1   | 2023-09-08T07:58:27.144002Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+root@ip-172-31-32-189:~/wordpress# 
